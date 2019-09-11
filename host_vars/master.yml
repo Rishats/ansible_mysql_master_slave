@@ -1,0 +1,31 @@
+mysql_root_home: /root
+mysql_root_username: root
+mysql_root_password: root
+
+mysql_enabled_on_startup: true
+
+mysql_port: "3306"
+mysql_bind_address: '10.0.0.2'
+mysql_datadir: /var/lib/mysql
+
+mysql_server_id: "1"
+mysql_max_binlog_size: "100M"
+mysql_binlog_format: "ROW"
+mysql_expire_logs_days: "10"
+mysql_replication_role: 'master'
+mysql_replication_user: {name: 'replicator', password: 'replicator_pwd'}
+
+mysql_users:
+  - name: mysql_user
+    host: "%"
+    password: pwd
+    priv: "example_db.*:ALL"
+  - name: replicator
+    host: "%"
+    password: replicator_pwd
+    priv: "*.*:SUPER,RELOAD,SHOW\ DATABASES"
+
+mysql_databases:
+  - name: example_db
+    encoding: latin1
+    collation: latin1_general_ci

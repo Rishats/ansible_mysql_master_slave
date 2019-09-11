@@ -1,0 +1,3 @@
+[mysqlservers]
+master ansible_ssh_host=34.76.232.45  ansible_ssh_port=22 ansible_ssh_user=risat ansible_python_interpreter=/usr/bin/python3
+slave ansible_ssh_host=35.240.47.189  ansible_ssh_port=22 ansible_ssh_user=risat ansible_python_interpreter=/usr/bin/python3
